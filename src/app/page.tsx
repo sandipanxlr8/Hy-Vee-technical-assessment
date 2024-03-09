@@ -30,7 +30,9 @@ const Home: React.FC = () => {
       let regionNames = new Intl.DisplayNames(["en"], { type: "region" });
       setCountry(regionNames.of(countryCode));
     } catch (error) {
-      setError("An error occurred. Please try again later.");
+      console.log(error);
+
+      setError("An error occurred at API. Please try again later.");
     } finally {
       setIsLoading(false);
     }
